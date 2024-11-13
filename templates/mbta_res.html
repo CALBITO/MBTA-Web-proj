@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Station Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='boston.jpg') }}" alt="Boston City">
+            <h1>Results for {{ place_name }}</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Nearest MBTA Stations:</h2>
+        <ul>
+            {% for station, accessible in stations %}
+                <li>
+                    {{ station }} - {% if accessible %}Wheelchair Accessible{% else %}Not Wheelchair Accessible{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Current Weather:</h2>
+        <p>Temperature: {{ weather.temperature }}°F</p>
+        <p>Humidity: {{ weather.humidity }}%</p>
+        <p>Pressure: {{ weather.pressure }} hPa</p>
+        <p>Weather Description: {{ weather_description }}</p>
+
+        {% if weather_description == 'clear sky' %}
+            <img src="{{ url_for('static', filename='clear.jpg') }}" alt="Clear Sky">
+        {% elif weather_description == 'cloudy' %}
+            <img src="{{ url_for('static', filename='cloudy.jpg') }}" alt="Cloudy Sky">
+        {% elif weather_description == 'rain' %}
+            <img src="{{ url_for('static', filename='rain.jpg') }}" alt="Rainy Weather">
+        {% elif weather_description == 'snow' %}
+            <img src="{{ url_for('static', filename='snow.jpg') }}" alt="Snowy Weather">
+        {% else %}
+            <img src="{{ url_for('static', filename='clear.jpg') }}" alt="Weather Image">
+        {% endif %}
+
+        <h2>Nearby Events:</h2>
+        <ul>
+            {% if events %}
+                {% for event in events %}
+                    <li>{{ event.name }} - Time: {{ event.time }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No events found.</li>
+            {% endif %}
