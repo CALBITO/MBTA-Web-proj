@@ -1,3 +1,21 @@
 # MBTA-Web-App-Project
 
-This is the base repository for Web App project. Please read the [instructions](instructions.md) for details.
+1. Project Overview
+My project is a web-based application that offers users real-time information on nearby public transportation stations, local weather, and forthcoming events in specific places. Through the integration of APIs such as Mapbox, MBTA, OpenWeather, and Ticketmaster, the application provides an educational experience for users interested in discovering Boston's attractions and looking for accessible transportation. In addition to fundamental needs, we included features like as wheelchair accessible indicators and unique visuals to boost usability and accessibility. These improvements were intended to make the app more inclusive and engaging, however several issues persisted.
+
+2. Reflection
+Development Process and Challenges
+The development process created unforeseen obstacles, particularly in troubleshooting image display errors, which had an influence on the overall workflow and delayed the final submission. Initially, I defined the project's main functions and implemented crucial features. However, after extensive testing, photos stored in the static folder for weather and accessibility icons would not render properly on the front end, resulting in continuous empty image blocks. This problem remained unanswered despite efforts to debug utilizing resources such as Stack Overflow and generative AI tools, which provided potential solutions but none of which entirely addressed the issue. Implementing photos should have been simple, but due to these difficulties, the debugging process took a long time, distracting attention from other features and ultimately impacting our deadline.
+
+Work Division and Team Dynamics.
+Our team divided tasks by separating backend responsibilities (API integrations) from frontend design (HTML templates and styling). While this structure enabled initial parallel work, unexpected interdependencies arose as data discrepancies revealed in template rendering. Furthermore, the unsolved picture display difficulties caused overlap between the frontend and backend roles as both members tried alternative workarounds. To solve these issues, we collaborated often and used version control to ensure consistent updates. In retrospect, establishing a clear strategy for frontend-backend testing and incorporating checkpoints for visual aspects would have facilitated collaboration, particularly given the ongoing debugging issue that hampered the project's progress.
+
+Learning and Future Applications
+This project provided valuable insights into API integration, error handling, and the importance of thorough front-end debugging, especially when incorporating images and static assets. We gained experience in Flask, Jinja templating, and dynamically rendering data, though the image display issue highlighted areas for improvement in file path management and CSS troubleshooting. Despite the limitations, AI tools proved helpful in troubleshooting API data handling and suggesting efficient error management, though they were less effective with our persistent image issue. Moving forward, we’ll apply a more robust debugging strategy and allow additional time for front-end troubleshooting, especially when integrating static files. If we had better understood path issues for static assets initially, it might have mitigated the submission delay.
+
+Learning and Future Applications.
+This project taught me a lot about API integration, error handling, and the value of comprehensive front-end debugging, especially when working with images and static assets. We learned about Flask, Jinja templating, and dynamically rendering data, however the picture display issue showed places for improvement in file path management and CSS troubleshooting. Despite their limits, AI tools were useful in diagnosing API data handling and advising efficient error management, albeit they were less effective for dealing with our recurring image issue. Moving forward, we'll use a more comprehensive debugging method and set aside more time for front-end troubleshooting, particularly when merging static files. If we had grasped route issues for static assets earlier, we could have avoided the submission delay.
+
+![alt text](<MBTA 1.png>)
+![alt text](<MBTA 2.png>)
+![alt text](<MBTA 3.png>)
