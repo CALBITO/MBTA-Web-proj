@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hi</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Station Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='boston.jpg') }}" alt="Boston City">
+            <h1>Find MBTA Stations Near You</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Search for a Location</h2>
+        <form method="POST">
+            <input type="text" name="place_name" placeholder="Enter a place" required>
+            <button type="submit">Search</button>
+        </form>
 
-  <body>
-    <h1>Hi</h1>
-    <p>This is an amazing app to help you find the nearest MBTA station</p>
-  </body>
+        {% if messages %}
+            <div class="messages">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
 </html>
